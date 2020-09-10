@@ -8,7 +8,8 @@ use App\Models\Message;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
-class MessageResource {
+class MessageResource
+{
     private Message $message;
     private array $recipients = [];
 
@@ -24,7 +25,8 @@ class MessageResource {
         return $this;
     }
 
-    public function storeMessage($payload) {
+    public function storeMessage($payload)
+    {
         /** @var User $user */
         $user = $payload['user'];
         /** @var Message $message */
@@ -33,12 +35,14 @@ class MessageResource {
         return $this->setMessage($message);
     }
 
-    public function notify() {
+    public function notify()
+    {
         MessageReceived::dispatch($this);
         return $this;
     }
 
-    public function sendEmail() {
+    public function sendEmail()
+    {
         foreach ($this->recipients as $recipient) {
             Mail::to($recipient)
                 ->send(new BaseMessage($this->message));

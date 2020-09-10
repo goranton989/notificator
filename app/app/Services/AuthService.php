@@ -10,7 +10,8 @@ use Exception;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
-class AuthService {
+class AuthService
+{
     protected string $ip;
 
     private User $user;
@@ -18,9 +19,11 @@ class AuthService {
     private ValidationService $validationService;
     private AuthDriverInterface $driver;
 
-    public function __construct(ErrorService $errorService,
-                                ValidationService $validationService,
-                                AuthDriverInterface $driver)
+    public function __construct(
+        ErrorService $errorService,
+        ValidationService $validationService,
+        AuthDriverInterface $driver
+    )
     {
         $this->errorService = $errorService;
         $this->validationService = $validationService;
@@ -73,7 +76,8 @@ class AuthService {
      * @throws Exception
      * @see ValidationService
      */
-    public function validate(): AuthService {
+    public function validate(): AuthService
+    {
         $this->validationService->runValidations($this->user);
         return $this;
     }
@@ -83,7 +87,8 @@ class AuthService {
      * @param string $password
      * @return string
      */
-    public function hashPassword(string $password): string {
+    public function hashPassword(string $password): string
+    {
         return bcrypt($password);
     }
 
@@ -106,7 +111,8 @@ class AuthService {
             ));
     }
 
-    public function login($credentials) {
+    public function login($credentials)
+    {
         return $this->driver->login($credentials);
     }
 
@@ -115,7 +121,8 @@ class AuthService {
         return $this->driver->logout($user);
     }
 
-    public function getUser(): User {
+    public function getUser(): User
+    {
         return $this->user;
     }
 }

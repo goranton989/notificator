@@ -3,9 +3,7 @@
 namespace App\Services\Auth\Drivers;
 
 use App\Models\User;
-use App\Services\Auth\Errors\InvalidCredentials;
 use App\Services\Auth\Interfaces\AuthDriverInterface;
-use App\Services\Error\ErrorService;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +13,8 @@ use Illuminate\Support\Facades\Auth;
  * Class JWTAuth
  * @package App\Services\Auth\Drivers
  */
-class JWTAuth implements AuthDriverInterface {
+class JWTAuth implements AuthDriverInterface
+{
     /**
      * Create and return access token by pass credentials
      * @param array $credentials

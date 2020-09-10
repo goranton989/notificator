@@ -40,7 +40,6 @@ class AppServiceProvider extends ServiceProvider
                 new JWTAuth(),
             );
         });
-
     }
 
     /**

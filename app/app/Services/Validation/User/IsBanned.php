@@ -12,7 +12,8 @@ use App\Services\Validation\Interfaces\ValidationInterface;
  * Class IsBanned
  * @package App\Services\Validations
  */
-class IsBanned implements ValidationInterface {
+class IsBanned implements ValidationInterface
+{
     public function getErrorInstance(): ErrorInterface
     {
         return new UserBanned();

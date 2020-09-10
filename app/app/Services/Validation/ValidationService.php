@@ -6,7 +6,8 @@ use App\Services\Error\ErrorService;
 use App\Services\Validation\Interfaces\ValidationInterface;
 use Exception;
 
-class ValidationService {
+class ValidationService
+{
     private array $validations = [];
     private ErrorService $errorService;
 
@@ -21,7 +22,8 @@ class ValidationService {
      * @param ValidationInterface $validation validation rule
      * @return $this
      */
-    public function pushValidation(ValidationInterface $validation) {
+    public function pushValidation(ValidationInterface $validation)
+    {
         $this->validations[] = $validation;
         return $this;
     }
@@ -32,7 +34,8 @@ class ValidationService {
      * @return bool
      * @throws Exception
      */
-    public function runValidations($payload) {
+    public function runValidations($payload)
+    {
         /** @var ValidationInterface $validation */
         foreach ($this->validations as $validation) {
             if (!$validation->validate($payload)) {

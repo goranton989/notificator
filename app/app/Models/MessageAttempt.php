@@ -28,7 +28,8 @@ class MessageAttempt extends Model
         return $this->updated_at->diffInSeconds(now());
     }
 
-    public function touch() {
+    public function touch()
+    {
         if (config('notificator.attempts') <= $this->number) {
             return $this;
         }

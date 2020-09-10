@@ -2,9 +2,8 @@
 
 namespace App\Services\Error;
 
-
-final class UserBanned implements ErrorInterface {
-
+final class UserBanned implements ErrorInterface
+{
     public static int $STATUS_CODE = 403;
 
     public function getErrorResponseCode(): int

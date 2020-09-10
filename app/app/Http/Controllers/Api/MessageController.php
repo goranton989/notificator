@@ -8,7 +8,6 @@ use App\Services\Error\Forbidden;
 use App\Services\Message\MessageService;
 use Illuminate\Http\JsonResponse;
 
-
 class MessageController extends Controller
 {
     private MessageService $messageService;

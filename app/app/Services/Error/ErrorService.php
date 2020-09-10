@@ -2,14 +2,15 @@
 
 namespace App\Services\Error;
 
-
 use Exception;
 
-class ErrorService {
+class ErrorService
+{
     protected ErrorInterface $error;
     protected array $validations = [];
 
-    public function setError(ErrorInterface $error) {
+    public function setError(ErrorInterface $error)
+    {
         $this->error = $error;
         return $this;
     }
@@ -18,7 +19,8 @@ class ErrorService {
      * Transform error to exception instance
      * @return Exception
      */
-    public function asException() {
+    public function asException()
+    {
         $error = $this->error;
         return new Exception($error->getMessage(), $error->getErrorResponseCode(), null);
     }
@@ -27,7 +29,8 @@ class ErrorService {
      * Transform error to json response
      * @return \Illuminate\Http\JsonResponse
      */
-    public function asJsonResponse() {
+    public function asJsonResponse()
+    {
         $error = $this->error;
 
         return response()->json(
@@ -41,7 +44,8 @@ class ErrorService {
      * Transform error to array
      * @return array
      */
-    public function asArray() {
+    public function asArray()
+    {
         $error = $this->error;
 
         return [

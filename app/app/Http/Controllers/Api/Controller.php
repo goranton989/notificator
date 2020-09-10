@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller as BaseController;
 use App\Services\Error\ErrorInterface;
 use App\Services\Error\ErrorService;
 
-
 /**
  * @OA\Swagger(
  *     schemes={"http"},

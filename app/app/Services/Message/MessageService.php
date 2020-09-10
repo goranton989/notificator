@@ -5,7 +5,8 @@ namespace App\Services\Message;
 use App\Models\User;
 use App\Resources\MessageResource;
 
-class MessageService {
+class MessageService
+{
     private MessageResource $messageResource;
 
     public function __construct(MessageResource $messageResource)

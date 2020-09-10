@@ -7,7 +7,8 @@ use App\Services\AuthService;
 use App\Services\Error\ErrorService;
 use App\Services\Validation\ValidationService;
 
-final class AuthProviderFactory {
+final class AuthProviderFactory
+{
     /**
      * @param ErrorService $errorService
      * @param $request

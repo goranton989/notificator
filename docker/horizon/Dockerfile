@@ -2,17 +2,19 @@ FROM php:7.4-fpm
 
 WORKDIR /tmp
 
-# Need for horizon
-RUN docker-php-ext-install pcntl
+RUN apt-get update
 
 RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
 
-RUN apt-get update && apt-get install -y supervisor
+RUN apt-get update && apt-get install -y supervisor libpq-dev
 
-COPY ./horizon.conf /etc/supervisor/conf.d/.
-COPY ./entrypoint.sh /bin/entrypoint.sh
+# Need for horizon
+RUN docker-php-ext-install pdo pdo_pgsql pcntl
+
+COPY ../php/horizon.conf /etc/supervisor/conf.d/.
+COPY ../php/entrypoint.sh /bin/entrypoint.sh
 
 # Cleanup
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

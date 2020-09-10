@@ -17,7 +17,8 @@ services:
 
   php-fpm:
     build: ./docker/php
-    user: www-data
+    entrypoint: entrypoint.sh default
+    command: docker-php-entrypoint php-fpm
     networks:
       - backend-network
       - external-network
@@ -32,15 +33,17 @@ services:
       - db
 
   horizon:
-    build: ./docker/horizon
-    entrypoint: entrypoint.sh
+    build: ./docker/php
+    entrypoint: entrypoint.sh horizon
     command: docker-php-entrypoint php-fpm
     networks:
       - backend-network
+      - external-network
     expose:
       - 9000
     volumes:
       - "./app:/srv/:rw"
+      - "./docker/php:/tmp"
 
   redis:
     build: ./docker/redis

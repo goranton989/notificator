@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * @property string message
+ * @property User user
  */
 class Message extends Model
 {

@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('password')->nullable();
 
             $table->boolean('banned')->default(false);
-            $table->ipAddress('ip')->unique();
+            $table->ipAddress('ip')->unique()->nullable();
 
             $table->rememberToken();
             $table->timestamps();

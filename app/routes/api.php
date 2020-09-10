@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth.guest:api')
+Route::middleware(['auth.guest'])
     ->group(function () {
         Route::resource('message', MessageController::class)
             ->only(['store', 'index']);

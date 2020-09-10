@@ -26,6 +26,11 @@ class MessageController extends Controller
      * description="Store message to database and etc",
      * operationId="MessageStore",
      * tags={"Message"},
+     * security={
+     *    {
+     *        "Bearer": {}
+     *    }
+     * },
      * @OA\RequestBody(
      *    required=true,
      *    description="Pass message information",
@@ -55,7 +60,7 @@ class MessageController extends Controller
      */
     public function store(StoreMessage $request)
     {
-        $user = $request->user();
+        $user = $request->user('api');
 
         if (!$this->messageService->userCanStore($user)) {
             return $this->error_response(new Forbidden());

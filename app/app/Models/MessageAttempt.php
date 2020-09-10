@@ -25,7 +25,7 @@ class MessageAttempt extends Model
 
     public function lastAttemptInSeconds()
     {
-        return $this->updated_at->diffInSeconds($this->updated_at);
+        return $this->updated_at->diffInSeconds(now());
     }
 
     public function touch() {

@@ -237,7 +237,12 @@
                             }
                         }
                     }
-                }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
             }
         }
     },
@@ -277,6 +282,14 @@
                 "xml": {
                     "name": "User"
                 }
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "description": "Bearer authorization",
+                "name": "Authorization",
+                "in": "header"
             }
         }
     },

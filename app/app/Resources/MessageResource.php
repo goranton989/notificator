@@ -39,7 +39,6 @@ class MessageResource {
     }
 
     public function sendEmail() {
-        \Log::debug($this->message->message);
         foreach ($this->recipients as $recipient) {
             Mail::to($recipient)
                 ->send(new BaseMessage($this->message));

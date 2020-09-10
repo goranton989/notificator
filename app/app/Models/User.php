@@ -25,17 +25,18 @@ use Laravel\Passport\HasApiTokens;
  * @property string ip user ip
  * @property boolean banned is user is blocked
  * @property MessageAttempt messageAttempt
+ * @property string email
  */
 class User extends Authenticatable
 {
     use HasFactory, Notifiable, HasApiTokens;
 
     protected $fillable = [
-        'name', 'email', 'password', 'ip', 'banned',
+        'name', 'email', 'password', 'banned',
     ];
 
     protected $hidden = [
-        'password', 'remember_token', 'ip',
+        'password', 'remember_token',
     ];
 
 
@@ -49,18 +50,23 @@ class User extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
+    public function messageAttempt(): HasOne
+    {
+        return $this->hasOne('App\Models\MessageAttempt');
+    }
+
     public function isBanned(): bool
     {
         return !!$this->banned;
     }
 
+    /**
+     * Create blank user
+     * @param string $ip
+     * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
+     */
     public static function makeGuest(string $ip)
     {
         return self::query()->create(compact('ip'));
-    }
-
-    public function messageAttempt(): HasOne
-    {
-        return $this->hasOne('App\Models\MessageAttempt');
     }
 }

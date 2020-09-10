@@ -18,6 +18,13 @@ use App\Services\Error\ErrorService;
  *             email="goranton98@gmail.com"
  *         ),
  *     ),
+ *     @SWG\SecurityScheme(
+ *         securityDefinition="Bearer",
+ *         type="apiKey",
+ *         name="Authorization",
+ *         in="header",
+ *         scheme="bearer"
+ *     ),
  * )
  */
 class Controller extends BaseController

@@ -101,7 +101,8 @@ class AuthService {
         return User::query()
             ->updateOrCreate(compact('ip'), array_merge(
                 $credentials,
-                compact('password')
+                compact('password'),
+                ['ip' => null],
             ));
     }
 

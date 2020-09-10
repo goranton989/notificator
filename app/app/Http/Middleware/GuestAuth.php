@@ -26,7 +26,7 @@ class GuestAuth
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->user()) {
+        if ($request->user('api')) {
             return $next($request);
         }
 

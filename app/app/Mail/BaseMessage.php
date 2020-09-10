@@ -13,6 +13,17 @@ class BaseMessage extends Mailable
 
     protected Message $message;
 
+    private function getFromAddress(): string
+    {
+        $email = $this->message->user->email;
+
+        if (!$email) {
+            $email = config('mail.from.address');
+        }
+
+        return $email;
+    }
+
     /**
      * Create a new message instance.
      * @param Message $message
@@ -28,9 +39,10 @@ class BaseMessage extends Mailable
      */
     public function build()
     {
-        return $this->view('emails.message.base')
+        return $this->from($this->getFromAddress())
+                    ->view('emails.message.base')
                     ->with([
-                        'text' => 'test',
+                        'text' => $this->message->message,
                     ]);
     }
 }

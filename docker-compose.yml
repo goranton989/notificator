@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  nginx:
+    image: nginx
+    restart: "always"
+    networks:
+      - backend-network
+      - external-network
+    ports:
+      - 8080:80
+    volumes:
+      - "./docker/nginx/notificator.conf:/etc/nginx/conf.d/default.conf"
+      - "./app:/srv/:rw"
+    depends_on: # load after php-fpm
+      - php-fpm
+
+  php-fpm:
+    build: ./docker/php
+    user: www-data
+    networks:
+      - backend-network
+      - external-network
+    env_file:
+      - ./app/.env
+    expose:
+      - 9000
+    volumes:
+      - "./app:/srv/:rw"
+    depends_on:
+      - redis
+
+  horizon:
+    build: ./docker/horizon
+    entrypoint: entrypoint.sh
+    command: docker-php-entrypoint php-fpm
+    networks:
+      - backend-network
+    expose:
+      - 9000
+    volumes:
+      - "./app:/srv/:rw"
+
+  redis:
+    build: ./docker/redis
+    networks:
+      - backend-network
+    environment:
+      REDIS_PASSWORD: example
+    entrypoint: sh /app/entrypoint.sh
+    expose:
+      - 6379
+
+networks:
+  backend-network:
+    internal: true
+  external-network:
+    driver: "bridge"

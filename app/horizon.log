@@ -1,0 +1,331 @@
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+
+   RedisException 
+
+  Connection refused
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Redis/Connectors/PhpRedisConnector.php:135
+    131▕         if (version_compare(phpversion('redis'), '5.3.0', '>=')) {
+    132▕             $parameters[] = Arr::get($config, 'context', []);
+    133▕         }
+    134▕ 
+  ➜ 135▕         $client->{($persistent ? 'pconnect' : 'connect')}(...$parameters);
+    136▕     }
+    137▕ 
+    138▕     /**
+    139▕      * Create a new redis cluster instance.
+
+      [2m+26 vendor frames [22m
+  27  /srv/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.
+
+   Error 
+
+  Call to a member function connection() on null
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1336
+    1332▕      * @return \Illuminate\Database\Connection
+    1333▕      */
+    1334▕     public static function resolveConnection($connection = null)
+    1335▕     {
+  ➜ 1336▕         return static::$resolver->connection($connection);
+    1337▕     }
+    1338▕ 
+    1339▕     /**
+    1340▕      * Get the connection resolver instance.
+
+      [2m+6 vendor frames [22m
+  7   /srv/app/Services/AuthService.php:33
+      Illuminate\Database\Eloquent\Model::query()
+
+  8   /srv/app/Services/AuthService.php:50
+      App\Services\AuthService::findByIp(Object(Closure))
+
+   Error 
+
+  Call to a member function connection() on null
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1336
+    1332▕      * @return \Illuminate\Database\Connection
+    1333▕      */
+    1334▕     public static function resolveConnection($connection = null)
+    1335▕     {
+  ➜ 1336▕         return static::$resolver->connection($connection);
+    1337▕     }
+    1338▕ 
+    1339▕     /**
+    1340▕      * Get the connection resolver instance.
+
+      [2m+6 vendor frames [22m
+  7   /srv/app/Services/AuthService.php:33
+      Illuminate\Database\Eloquent\Model::query()
+
+  8   /srv/app/Services/AuthService.php:50
+      App\Services\AuthService::findByIp(Object(Closure))
+
+   Error 
+
+  Call to a member function connection() on null
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1336
+    1332▕      * @return \Illuminate\Database\Connection
+    1333▕      */
+    1334▕     public static function resolveConnection($connection = null)
+    1335▕     {
+  ➜ 1336▕         return static::$resolver->connection($connection);
+    1337▕     }
+    1338▕ 
+    1339▕     /**
+    1340▕      * Get the connection resolver instance.
+
+      [2m+6 vendor frames [22m
+  7   /srv/app/Services/AuthService.php:33
+      Illuminate\Database\Eloquent\Model::query()
+
+  8   /srv/app/Services/AuthService.php:50
+      App\Services\AuthService::findByIp(Object(Closure))
+
+   Error 
+
+  Call to a member function connection() on null
+
+  at /srv/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1336
+    1332▕      * @return \Illuminate\Database\Connection
+    1333▕      */
+    1334▕     public static function resolveConnection($connection = null)
+    1335▕     {
+  ➜ 1336▕         return static::$resolver->connection($connection);
+    1337▕     }
+    1338▕ 
+    1339▕     /**
+    1340▕      * Get the connection resolver instance.
+
+      [2m+6 vendor frames [22m
+  7   /srv/app/Services/AuthService.php:33
+      Illuminate\Database\Eloquent\Model::query()
+
+  8   /srv/app/Services/AuthService.php:50
+      App\Services\AuthService::findByIp(Object(Closure))
+Horizon started successfully.

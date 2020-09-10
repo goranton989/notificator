@@ -28,6 +28,7 @@ swagger - `/api/documentation`
             DB_PASSWORD=%user_pass%
         ```
 2) `docker-compose up -d --build && ./bin/composer install` - собираем образ и создаём окружение
+2) `./bin/artian passport:install` - Создать ключи для авторизации
 3) `./bin/artisan key:generate && ./bin/artisan migrate` - генерируем ключ приложения и применяем миграции
 4) Настройка отправки почты:
     - В файле `app/.env`:

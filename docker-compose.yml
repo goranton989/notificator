@@ -29,6 +29,7 @@ services:
       - "./app:/srv/:rw"
     depends_on:
       - redis
+      - db
 
   horizon:
     build: ./docker/horizon
@@ -50,6 +51,29 @@ services:
     entrypoint: sh /app/entrypoint.sh
     expose:
       - 6379
+
+  db:
+    image: postgres
+    networks:
+      - backend-network
+    restart: always
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: example
+      POSTGRES_DB: notificator
+    expose:
+      - 5432
+    volumes:
+      - ./docker/database/data:/var/lib/postgresql/data
+
+  adminer:
+    image: adminer
+    networks:
+      - external-network
+      - backend-network
+    restart: always
+    ports:
+      - 8081:8080
 
 networks:
   backend-network:

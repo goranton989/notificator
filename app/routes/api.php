@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\MessageController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,3 +20,7 @@ Route::middleware('auth.guest:api')
         Route::resource('message', MessageController::class)
             ->only(['store', 'index']);
     });
+
+Route::prefix('auth')->group(function () {
+    Route::post('register', RegisterController::class);
+});

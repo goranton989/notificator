@@ -6,6 +6,8 @@ use App\Models\User;
 use App\Services\Error\ErrorService;
 use App\Services\Validation\ValidationService;
 use Exception;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 
 class AuthService {
     protected string $ip;
@@ -35,7 +37,7 @@ class AuthService {
     /**
      * Return user model instance find by ip
      * @param null|callable $notFoundCb - raise when user not found
-     * @return User|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model|object
+     * @return User|Builder|Model|object
      */
     public function findByIp(callable $notFoundCb = null)
     {
@@ -80,17 +82,22 @@ class AuthService {
         return bcrypt($password);
     }
 
-
     /**
      * Return new user instance
      * @param array $credentials
      * @param string $password
-     * @return User|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
+     * @return User|Builder|Model
      */
     public function create(array $credentials, string $password)
     {
         $password = $this->hashPassword($password);
-        return User::query()->create(array_merge($credentials, compact('password')));
+        $ip = $this->ip;
+
+        return User::query()
+            ->updateOrCreate(compact('ip'), array_merge(
+                $credentials,
+                compact('password')
+            ));
     }
 
     public function getUser(): User {

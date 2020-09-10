@@ -69,6 +69,24 @@
                                 }
                             }
                         }
+                    },
+                    "422": {
+                        "description": "Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "error": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -152,7 +170,7 @@
                     "id": {
                         "type": "integer",
                         "readOnly": "true",
-                        "example": "1"
+                        "example": 1
                     },
                     "email": {
                         "description": "User unique email address",

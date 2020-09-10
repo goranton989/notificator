@@ -7,7 +7,7 @@ swagger - `/api/documentation`
 
 # Настройка окружения
 1) Настройка базы данных:
-    - создать `docker-compose.override.yml` в `app/`
+    - скопировать `app/.env.example` в `app/.env` и  создать `docker-compose.override.yml` в `app/`
     - Содержимое файла:
         ```
         services:

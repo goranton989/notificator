@@ -5,6 +5,8 @@ swagger - `/api/documentation`
  
 #### По-умолчанию запускается на порту `8080`
 
+#### Если проблема с правами, то выполняем команду : `sudo chown www-data:www-data -R app/storage/`
+
 # Настройка окружения
 1) Настройка базы данных:
     - скопировать `app/.env.example` в `app/.env` и  создать `docker-compose.override.yml` в `app/`

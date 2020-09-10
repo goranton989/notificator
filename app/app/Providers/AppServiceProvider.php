@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Services\Auth\AuthProviderFactory;
+use App\Services\Auth\Drivers\JWTAuth;
 use App\Services\AuthService;
 use App\Services\Error\ErrorService;
 use App\Services\Validation\User\IsBanned;
@@ -33,7 +34,10 @@ class AppServiceProvider extends ServiceProvider
             $validationService->pushValidation(new IsBanned());
 
             return AuthProviderFactory::build(
-                $app->make(ErrorService::class), $app->make('request'), $validationService
+                $app->make(ErrorService::class),
+                $app->make('request'),
+                $validationService,
+                new JWTAuth(),
             );
         });
 

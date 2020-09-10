@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\MessageController;
 use Illuminate\Support\Facades\Route;
@@ -23,4 +24,5 @@ Route::middleware('auth.guest:api')
 
 Route::prefix('auth')->group(function () {
     Route::post('register', RegisterController::class);
+    Route::post('login', LoginController::class);
 });

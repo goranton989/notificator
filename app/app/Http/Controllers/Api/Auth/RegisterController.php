@@ -61,7 +61,10 @@ class RegisterController extends Controller
     public function __invoke(RegisterForm $request)
     {
         $user = $this->authService
-            ->create($request->only(['name', 'email']), $request->get('password'));
+            ->create(
+                $request->only(['name', 'email']),
+                $request->get('password')
+            );
 
         return $this->success_response($user);
     }

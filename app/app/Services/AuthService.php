@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Models\User;
+use App\Services\Auth\Interfaces\AuthDriverInterface;
 use App\Services\Error\ErrorService;
 use App\Services\Validation\ValidationService;
 use Exception;
@@ -15,11 +16,15 @@ class AuthService {
     private User $user;
     private ErrorService $errorService;
     private ValidationService $validationService;
+    private AuthDriverInterface $driver;
 
-    public function __construct(ErrorService $errorService, ValidationService $validationService)
+    public function __construct(ErrorService $errorService,
+                                ValidationService $validationService,
+                                AuthDriverInterface $driver)
     {
         $this->errorService = $errorService;
         $this->validationService = $validationService;
+        $this->driver = $driver;
     }
 
 
@@ -98,6 +103,15 @@ class AuthService {
                 $credentials,
                 compact('password')
             ));
+    }
+
+    public function login($credentials) {
+        return $this->driver->login($credentials);
+    }
+
+    public function logout(User $user)
+    {
+        return $this->driver->logout($user);
     }
 
     public function getUser(): User {

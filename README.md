@@ -1,5 +1,9 @@
-horizon - /horizon
-swagger - /api/documentation
+horizon - `/horizon`
+---------
+swagger - `/api/documentation`
+---------
+ 
+#### По-умолчанию запускается на порту `8080`
 
 # Настройка окружения
 1) Настройка базы данных:

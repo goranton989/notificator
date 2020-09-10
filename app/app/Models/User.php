@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -11,6 +13,7 @@ use Illuminate\Notifications\Notifiable;
  * @property string password user password
  * @property string ip user ip
  * @property boolean banned is user is blocked
+ * @property MessageAttempt messageAttempt
  */
 class User extends Authenticatable
 {
@@ -30,11 +33,23 @@ class User extends Authenticatable
         'banned' => 'boolean',
     ];
 
-    public function isBanned(): bool {
+    public function messages(): HasMany
+    {
+        return $this->hasMany(Message::class);
+    }
+
+    public function isBanned(): bool
+    {
         return !!$this->banned;
     }
 
-    public static function makeGuest(string $ip) {
+    public static function makeGuest(string $ip)
+    {
         return self::query()->create(compact('ip'));
+    }
+
+    public function messageAttempt(): HasOne
+    {
+        return $this->hasOne('App\Models\MessageAttempt');
     }
 }

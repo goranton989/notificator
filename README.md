@@ -1,6 +1,13 @@
+horizon - `/horizon`
+---------
+swagger - `/api/documentation`
+---------
+ 
+#### По-умолчанию запускается на порту `8080`
+
 # Настройка окружения
 1) Настройка базы данных:
-    - создать `docker-compose.override.yml` в `app/`
+    - скопировать `app/.env.example` в `app/.env` и  создать `docker-compose.override.yml` в `app/`
     - Содержимое файла:
         ```
         services:
@@ -18,8 +25,8 @@
             DB_USERNAME=%user_name%
             DB_PASSWORD=%user_pass%
         ```
-2) `docker-compose up -d --build` - собираем образ и создаём окружение
-3) `./bin/artisan key:generate` - генерируем ключ приложения
+2) `docker-compose up -d --build && ./bin/composer install` - собираем образ и создаём окружение
+3) `./bin/artisan key:generate && ./bin/artisan migrate` - генерируем ключ приложения и применяем миграции
 4) Настройка отправки почты:
     - В файле `app/.env`:
         ```

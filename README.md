@@ -1,3 +1,6 @@
+horizon - /horizon
+swagger - /api/documentation
+
 # Настройка окружения
 1) Настройка базы данных:
     - создать `docker-compose.override.yml` в `app/`

@@ -19,7 +19,7 @@
             DB_PASSWORD=%user_pass%
         ```
 2) `docker-compose up -d --build` - собираем образ и создаём окружение
-3) `./bin/artisan key:generate` - генерируем ключ приложения
+3) `./bin/artisan key:generate && ./bin/artisan migrate` - генерируем ключ приложения и применяем миграции
 4) Настройка отправки почты:
     - В файле `app/.env`:
         ```

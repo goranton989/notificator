@@ -329,3 +329,5 @@ Horizon started successfully.
   8   /srv/app/Services/AuthService.php:50
       App\Services\AuthService::findByIp(Object(Closure))
 Horizon started successfully.
+Horizon started successfully.
+Horizon started successfully.

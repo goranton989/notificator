@@ -57,7 +57,6 @@ class MessageController extends Controller
     {
         $user = $request->user();
 
-        \Log::debug($this->messageService->userCanStore($user) ? 'test' : 'false');
         if (!$this->messageService->userCanStore($user)) {
             return $this->error_response(new Forbidden());
         }

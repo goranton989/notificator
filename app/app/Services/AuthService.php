@@ -71,6 +71,28 @@ class AuthService {
         return $this;
     }
 
+    /**
+     * Return hash value of password
+     * @param string $password
+     * @return string
+     */
+    public function hashPassword(string $password): string {
+        return bcrypt($password);
+    }
+
+
+    /**
+     * Return new user instance
+     * @param array $credentials
+     * @param string $password
+     * @return User|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Model
+     */
+    public function create(array $credentials, string $password)
+    {
+        $password = $this->hashPassword($password);
+        return User::query()->create(array_merge($credentials, compact('password')));
+    }
+
     public function getUser(): User {
         return $this->user;
     }
